@@ -1,0 +1,16 @@
+from PIL import Image
+
+width = 256
+height = 256
+
+image = Image.new("RGB", (width, height))
+
+for y in range(height):
+    for x in range(width):
+        red = x
+        green = y
+        blue = (x + y) // 2
+
+        image.putpixel((x, y), (red, green, blue))
+
+image.save("color_image.png")
